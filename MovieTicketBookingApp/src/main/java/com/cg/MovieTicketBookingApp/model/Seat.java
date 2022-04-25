@@ -1,5 +1,6 @@
 package com.cg.MovieTicketBookingApp.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,10 +14,18 @@ public class Seat {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="seat_id")
 	private int seatId;
+	
+	@Column(name="seat_number")
 	private String seatNumber;
+	
+	@Column(name="type")
 	private String type;
+	
+	@Column(name="price")
 	private double price;
+	
 	public Seat() {
 		super();
 		// TODO Auto-generated constructor stub

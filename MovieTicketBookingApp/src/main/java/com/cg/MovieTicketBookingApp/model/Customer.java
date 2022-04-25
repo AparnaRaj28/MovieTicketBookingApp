@@ -1,5 +1,6 @@
 package com.cg.MovieTicketBookingApp.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,11 +13,22 @@ public class Customer {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="customer_id")
 	private int customerId;
+	
+	@Column(name="customer_name")
 	private String customerName;
+	
+	@Column(name="address")
 	private String address;
+	
+	@Column(name="mobile_number")
 	private String mobileNumber;
+	
+	@Column(name="email")
 	private String email;
+	
+	@Column(name="password")
 	private String password;
 	public Customer() {
 		super();

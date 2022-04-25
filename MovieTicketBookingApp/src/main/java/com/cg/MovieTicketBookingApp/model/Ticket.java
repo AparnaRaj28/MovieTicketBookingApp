@@ -2,6 +2,7 @@ package com.cg.MovieTicketBookingApp.model;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,11 +15,21 @@ public class Ticket {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="ticket_id")
 	private int ticketId;
+	
+	@Column(name="no_of_seats")
 	private int noOfSeats;
+	
+	@Column(name="seat_number")
 	private List<Seat> seatNumber;
+	
+	@Column(name="booking_ref")
 	private TicketBooking bookingRef;
+	
+	@Column(name="ticket_status")
 	private boolean ticketStatus;
+	
 	public Ticket() {
 		super();
 		// TODO Auto-generated constructor stub
