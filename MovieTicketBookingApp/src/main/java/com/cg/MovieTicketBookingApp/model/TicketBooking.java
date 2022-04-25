@@ -2,10 +2,15 @@ package com.cg.MovieTicketBookingApp.model;
 
 import java.time.LocalDate;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -23,14 +28,15 @@ public class TicketBooking {
 	private String transactionMode;
 	private String transactionStatus;
 	private double totalCost;
+	
+	@OneToOne
 	private Ticket ticket;
 	public TicketBooking() {
-		super();
-		// TODO Auto-generated constructor stub
+	
 	}
 	public TicketBooking(int ticketId, int showId, LocalDate bookingDate, int transactionId, String transactionMode,
 			String transactionStatus, double totalCost, Ticket ticket) {
-		super();
+		
 		this.ticketId = ticketId;
 		this.showId = showId;
 		this.bookingDate = bookingDate;

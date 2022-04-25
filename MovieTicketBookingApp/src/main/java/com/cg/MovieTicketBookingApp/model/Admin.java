@@ -15,12 +15,12 @@ public class Admin {
 	private int adminId;
 	private String adminName;
 	private String adminContact;
-	Admin()
+	public Admin()
 	{
 		
 	}
 	public Admin(int adminId, String adminName, String adminContact) {
-		super();
+		
 		this.adminId = adminId;
 		this.adminName = adminName;
 		this.adminContact = adminContact;

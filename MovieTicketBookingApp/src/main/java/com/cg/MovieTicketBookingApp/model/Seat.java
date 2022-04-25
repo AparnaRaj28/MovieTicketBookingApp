@@ -18,11 +18,10 @@ public class Seat {
 	private String type;
 	private double price;
 	public Seat() {
-		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 	public Seat(int seatId, String seatNumber, String type, double price) {
-		super();
+		
 		this.seatId = seatId;
 		this.seatNumber = seatNumber;
 		this.type = type;

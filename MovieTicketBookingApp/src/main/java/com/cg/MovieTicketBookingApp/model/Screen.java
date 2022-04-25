@@ -23,11 +23,10 @@ public class Screen {
 	private int rows;
 	private int columns;
 	public Screen() {
-		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 	public Screen(int screenId, int theatreId, String screenName, List<Show> showList, int rows, int columns) {
-		super();
+	
 		this.screenId = screenId;
 		this.theatreId = theatreId;
 		this.screenName = screenName;

@@ -22,12 +22,11 @@ public class Theatre {
 	private String managerName;
 	private String managerContact;
 	public Theatre() {
-		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 	public Theatre(String theatreId, String theatreName, String theatreCity, List<Movie> listOfMovies,
 			List<Screen> listOfScreens, String managerName, String managerContact) {
-		super();
+		
 		this.theatreId = theatreId;
 		this.theatreName = theatreName;
 		this.theatreCity = theatreCity;

@@ -16,11 +16,10 @@ public class User {
 	private String password;
 	private String role;
 	public User() {
-		super();
-		// TODO Auto-generated constructor stub
+	
 	}
 	public User(int userId, String password, String role) {
-		super();
+		
 		this.userId = userId;
 		this.password = password;
 		this.role = role;

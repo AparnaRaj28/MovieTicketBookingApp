@@ -3,9 +3,13 @@ package com.cg.MovieTicketBookingApp.model;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -17,14 +21,15 @@ public class Ticket {
 	private int ticketId;
 	private int noOfSeats;
 	private List<Seat> seatNumber;
+	
 	private TicketBooking bookingRef;
+	
 	private boolean ticketStatus;
 	public Ticket() {
-		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 	public Ticket(int ticketId, int noOfSeats, List<Seat> seatNumber, TicketBooking bookingRef, boolean ticketStatus) {
-		super();
+		
 		this.ticketId = ticketId;
 		this.noOfSeats = noOfSeats;
 		this.seatNumber = seatNumber;

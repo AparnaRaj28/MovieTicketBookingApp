@@ -23,12 +23,11 @@ public class Show {
 	private int screenId;
 	private int theatreId;
 	public Show() {
-		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 	public Show(String showId, LocalDateTime showStartTime, LocalDateTime showEndTime, String showName, Movie movie,
 			int screenId, int theatreId) {
-		super();
+		
 		this.showId = showId;
 		this.showStartTime = showStartTime;
 		this.showEndTime = showEndTime;

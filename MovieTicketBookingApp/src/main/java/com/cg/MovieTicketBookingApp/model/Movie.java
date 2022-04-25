@@ -19,12 +19,11 @@ public class Movie {
 	private String language;
 	private String description;
 	public Movie() {
-		super();
-		// TODO Auto-generated constructor stub
+	
 	}
 	public Movie(String movieId, String movieName, String movieGenre, String movieHours, String language,
 			String description) {
-		super();
+		
 		this.movieId = movieId;
 		this.movieName = movieName;
 		this.movieGenre = movieGenre;

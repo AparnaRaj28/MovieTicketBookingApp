@@ -11,7 +11,7 @@ import javax.persistence.Table;
 public class Customer {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int customerId;
 	private String customerName;
 	private String address;
@@ -19,12 +19,11 @@ public class Customer {
 	private String email;
 	private String password;
 	public Customer() {
-		super();
-		// TODO Auto-generated constructor stub
+	
 	}
 	public Customer(int customerId, String customerName, String address, String mobileNumber, String email,
 			String password) {
-		super();
+		
 		this.customerId = customerId;
 		this.customerName = customerName;
 		this.address = address;
