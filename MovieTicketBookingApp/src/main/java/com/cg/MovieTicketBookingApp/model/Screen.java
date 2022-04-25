@@ -2,6 +2,7 @@ package com.cg.MovieTicketBookingApp.model;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,14 +15,27 @@ public class Screen {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="screen_id")
 	private int screenId;
+	
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="theatre_id")
 	private int theatreId;
+	
+	@Column(name="screen_name")
 	private String screenName;
+	
+	@Column(name="show_list")
 	private List<Show> showList;
+	
+	@Column(name="rows")
 	private int rows;
+	
+	@Column(name="columns")
 	private int columns;
+	
 	public Screen() {
 		
 	}

@@ -2,6 +2,7 @@ package com.cg.MovieTicketBookingApp.model;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,13 +16,27 @@ public class Show {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="show_id")
 	private String showId;
+	
+	@Column(name="show_start_time")
 	private LocalDateTime showStartTime;
+	
+	@Column(name="show_end_time")
 	private LocalDateTime showEndTime;
+	
+	@Column(name="show_name")
 	private String showName;
+	
+	@Column(name="movie")
 	private Movie movie;
+	
+	@Column(name="screen_id")
 	private int screenId;
+	
+	@Column(name="theatre_id")
 	private int theatreId;
+	
 	public Show() {
 		
 	}

@@ -2,6 +2,7 @@ package com.cg.MovieTicketBookingApp.model;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -18,13 +19,27 @@ public class Ticket {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="ticket_id")
 	private int ticketId;
+	
+	@Column(name="no_of_seats")
 	private int noOfSeats;
+	
+	@Column(name="seat_number")
 	private List<Seat> seatNumber;
 	
+<<<<<<< HEAD
+=======
+	@Column(name="booking_ref")
+>>>>>>> branch 'master' of https://github.com/AparnaRaj28/MovieTicketBookingApp.git
 	private TicketBooking bookingRef;
 	
+<<<<<<< HEAD
+=======
+	@Column(name="ticket_status")
+>>>>>>> branch 'master' of https://github.com/AparnaRaj28/MovieTicketBookingApp.git
 	private boolean ticketStatus;
+	
 	public Ticket() {
 		
 	}

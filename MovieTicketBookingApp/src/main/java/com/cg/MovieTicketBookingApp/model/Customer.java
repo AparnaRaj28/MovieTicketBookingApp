@@ -1,5 +1,6 @@
 package com.cg.MovieTicketBookingApp.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,12 +12,27 @@ import javax.persistence.Table;
 public class Customer {
 
 	@Id
+<<<<<<< HEAD
 	@GeneratedValue(strategy=GenerationType.AUTO)
+=======
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="customer_id")
+>>>>>>> branch 'master' of https://github.com/AparnaRaj28/MovieTicketBookingApp.git
 	private int customerId;
+	
+	@Column(name="customer_name")
 	private String customerName;
+	
+	@Column(name="address")
 	private String address;
+	
+	@Column(name="mobile_number")
 	private String mobileNumber;
+	
+	@Column(name="email")
 	private String email;
+	
+	@Column(name="password")
 	private String password;
 	public Customer() {
 	

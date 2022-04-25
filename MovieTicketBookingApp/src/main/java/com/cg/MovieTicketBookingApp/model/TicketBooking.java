@@ -2,7 +2,11 @@ package com.cg.MovieTicketBookingApp.model;
 
 import java.time.LocalDate;
 
+<<<<<<< HEAD
 import javax.persistence.CascadeType;
+=======
+import javax.persistence.Column;
+>>>>>>> branch 'master' of https://github.com/AparnaRaj28/MovieTicketBookingApp.git
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -19,18 +23,36 @@ public class TicketBooking {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="ticket_id")
 	private int ticketId;
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="show_id")
 	private int showId;
+	
+	@Column(name="booking_date")
 	private LocalDate bookingDate;
+	
+	@Column(name="transaction_id")
 	private int transactionId;
+	
+	@Column(name="transaction_mode")
 	private String transactionMode;
+	
+	@Column(name="transaction_status")
 	private String transactionStatus;
+	
+	@Column(name="total_cost")
 	private double totalCost;
 	
+<<<<<<< HEAD
 	@OneToOne
+=======
+	@Column(name="ticket")
+>>>>>>> branch 'master' of https://github.com/AparnaRaj28/MovieTicketBookingApp.git
 	private Ticket ticket;
+	
 	public TicketBooking() {
 	
 	}
