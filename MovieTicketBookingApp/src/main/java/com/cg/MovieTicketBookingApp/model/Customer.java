@@ -12,13 +12,9 @@ import javax.persistence.Table;
 public class Customer {
 
 	@Id
-<<<<<<< HEAD
-	@GeneratedValue(strategy=GenerationType.AUTO)
-=======
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="customer_id")
->>>>>>> branch 'master' of https://github.com/AparnaRaj28/MovieTicketBookingApp.git
-	private int customerId;
+     private int customerId;
 	
 	@Column(name="customer_name")
 	private String customerName;

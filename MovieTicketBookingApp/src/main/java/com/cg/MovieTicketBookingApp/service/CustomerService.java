@@ -8,6 +8,6 @@ import com.cg.MovieTicketBookingApp.repository.CustomerRepository;
 @Service
 public class CustomerService {
 
-	@Autowired
-	CustomerRepository repository;
+//	@Autowired
+//	CustomerRepository repository;
 }
