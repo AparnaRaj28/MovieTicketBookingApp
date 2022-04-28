@@ -1,5 +1,7 @@
 package com.cg.MovieTicketBookingApp.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.ui.Model;
@@ -12,6 +14,7 @@ import com.cg.MovieTicketBookingApp.model.Customer;
 import com.cg.MovieTicketBookingApp.model.User;
 import com.cg.MovieTicketBookingApp.repository.CustomerRepository;
 import com.cg.MovieTicketBookingApp.repository.UserRepository;
+import com.cg.MovieTicketBookingApp.service.CustomerService;
 
 @RestController
 public class ApplicationController {
@@ -24,6 +27,9 @@ public class ApplicationController {
 	
 	@Autowired
 	private CustomerRepository customer_repo;
+	
+//	@Autowired
+//	private CustomerService cust_service;
 	
 	@GetMapping("/")
 	public ModelAndView homepage() 
@@ -53,5 +59,14 @@ public class ApplicationController {
 		customer_repo.save(customer);
 		return new ModelAndView("success");
 	}
+	
+//	   @GetMapping("/viewcustomer")
+//	   public ModelAndView ViewCustomers(Model m)
+//		{
+//		   ModelAndView mav = new ModelAndView("ViewCutomers");
+//		    List<Customer> customer=cust_service.ViewAllCustomer();
+//		    mav.addObject("customer",customer);
+//		    return mav;
+//		}
    
 }

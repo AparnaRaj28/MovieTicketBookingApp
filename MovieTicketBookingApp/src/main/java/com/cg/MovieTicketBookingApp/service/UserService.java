@@ -3,14 +3,16 @@ package com.cg.MovieTicketBookingApp.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.cg.MovieTicketBookingApp.model.Customer;
 import com.cg.MovieTicketBookingApp.model.User;
 import com.cg.MovieTicketBookingApp.repository.UserRepository;
 
 @Service
-public class UserService {
+public interface UserService {
 
-	@Autowired
-	UserRepository user_repo;
+	//User saveUser(User user);
+
+	//User saveCustomer(Customer customer);
 	
 //	public User signIn(String username,String password)
 //	{
