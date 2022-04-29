@@ -5,7 +5,7 @@ import com.cg.MovieTicketBookingApp.model.User;
 import com.cg.MovieTicketBookingApp.repository.UserRepository;
 import com.cg.MovieTicketBookingApp.service.UserService;
 
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl extends UserService{
 
 	private UserRepository user_repo;
 	
