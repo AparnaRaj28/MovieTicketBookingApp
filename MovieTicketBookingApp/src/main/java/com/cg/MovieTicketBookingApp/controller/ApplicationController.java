@@ -51,7 +51,7 @@ public class ApplicationController {
 		return new ModelAndView("login");
 	}
 	
-	//checking for login credentials
+	//checking for login credentials//
 	@PostMapping("/login")
 	public ModelAndView login(@ModelAttribute("users") User user,Model model )
 	{
