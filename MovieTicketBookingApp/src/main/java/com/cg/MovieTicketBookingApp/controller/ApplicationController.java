@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
@@ -45,9 +46,26 @@ public class ApplicationController {
 	}
 	
 	@GetMapping("/login")
-	public ModelAndView login()
+	public ModelAndView getloginForm()
 	{
 		return new ModelAndView("login");
+	}
+	
+	//checking for login credentials
+	@PostMapping("/login")
+	public ModelAndView login(@ModelAttribute("users") User user,Model model )
+	{
+		String username=user.getEmail();
+		String password=user.getPassword();
+		
+		if(username.equals("admin") && password.equals("admin"))
+		{
+			return new ModelAndView("admin/adminhome");
+			
+		}
+		model.addAttribute("Invalid credentials",true);
+		return new ModelAndView("login");
+		
 	}
 	
 	@PostMapping("/process_register")
@@ -59,6 +77,8 @@ public class ApplicationController {
 		customer_repo.save(customer);
 		return new ModelAndView("success");
 	}
+	
+
 	
 //	   @GetMapping("/viewcustomer")
 //	   public ModelAndView ViewCustomers(Model m)

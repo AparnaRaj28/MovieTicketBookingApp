@@ -1,42 +1,97 @@
 <!DOCTYPE html>
-<html>
 <head>
+<link href="css/style.css" rel="stylesheet" />
 <meta charset="ISO-8859-1">
-<title>Registration Page</title>
+<title>Add customer</title>
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+ 
+}
+label{
+ font-family:  sans-serif;
+}
+input[type=password], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+ 
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+
 </head>
 <body>
-	<h2>welcome to registration page</h2>
-	<hr>
+	
+	 <!--  Start home navbar --> 
+	 <div class="header">
+		<a href="#default" class="logo"><label>Movie Ticket Booking Application</label></a>
+		<div class="header-right">
+			<a class="active" href="/">Home</a> <a href="/login">Login</a> <a
+				href="/register">Register</a>
+		</div>
+	</div> 
+	 <!--  end home navbar --> 
 
-	<form action="/process_register" method="post" object="${customer}">
+	  <form action="/process_register" method="post" object="${customer}">
 		<table align="center">
 			<tr>
-				<td>Full name</td>
+				<td><label>Full name</label></td>
 				<td><input type="text" name="customerName"
 					placeholder="Enter the name" required></td>
 			</tr>
 			<tr>
-				<td>Address</td>
+				<td><label>Address</label></td>
 				<td><input type="text" name="address"
 					placeholder="Enter the address" required></td>
 			</tr>
 			<tr>
-				<td>Mobile number</td>
+				<td><label>Mobile number</label></td>
 				<td><input type="text" name="mobileNumber"
 					placeholder="Enter the mobile number" required></td>
 			</tr>			
 			<tr>
-				<td>Email</td>
+				<td><label>Email</label></td>
 				<td><input type="text" name="email"
 					placeholder="Enter the email" required></td>
 			</tr>	
 			<tr>
-				<td>Password</td>
+				<td><label>Password</label></td>
 				<td><input type="password" name="password"
 					placeholder="Enter the password" required></td>
 			</tr>
 			<tr>
-			     <td>Select user</td>
+			     <td><label>Select user</label></td>
 			     <td><select name="role">
 			         <option value="customer">Customer</option>
 			     </select></td>
