@@ -13,7 +13,7 @@ public class Movie {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private String movieId;
+	private int movieId;
 	
 	@Column(name="movie_name")
 	private String movieName;
@@ -33,7 +33,7 @@ public class Movie {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Movie(String movieId, String movieName, String movieGenre, String movieHours, String language,
+	public Movie(int movieId, String movieName, String movieGenre, String movieHours, String language,
 			String description) {
 		super();
 		this.movieId = movieId;
@@ -43,10 +43,10 @@ public class Movie {
 		this.language = language;
 		this.description = description;
 	}
-	public String getMovieId() {
+	public int getMovieId() {
 		return movieId;
 	}
-	public void setMovieId(String movieId) {
+	public void setMovieId(int movieId) {
 		this.movieId = movieId;
 	}
 	public String getMovieName() {

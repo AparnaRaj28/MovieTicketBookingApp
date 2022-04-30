@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit movie</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+
+</head>
+<body>
+	<div class="container">
+
+		<div class="row">
+			<div
+				class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<h1 class="text-center">Update Movie</h1>
+				<div class="card-body">
+					<form th:action="@{/viewmovie/{id} (id=${movies.movieId})}" th:object="${movies}"
+						method="POST">
+
+						<div class="form-group">
+							<label>Movie Name</label> <input type="text"
+								name="movieName" th:field="*{movieName}"
+								placeholder="Enter movie name" class="form-control">
+						</div>
+
+						<div class="form-group">
+							<label>Movie Genre</label> <input type="text" name="movieGenre"
+								th:field="*{movieGenre}" placeholder="Enter Genre"
+								class="form-control">
+						</div>
+
+						<div class="form-group">
+							<label>Movie Hours</label> <input type="text"
+								name="movieHours" th:field="*{movieHours}"
+								placeholder="Enter Hours" class="form-control">
+						</div>
+
+						<div class="form-group">
+							<label>Movie language</label> <input type="text" name="language"
+								th:field="*{language}" placeholder="Enter language"
+								class="form-control">
+						</div>
+						
+						<div class="form-group">
+							<label>Movie description</label> 
+							<textarea  name="description"
+								th:field="*{description}" placeholder="Enter description"
+								class="form-control"></textarea>
+							
+						</div>
+
+					<!--  	<div class="form-group">
+							<label>Customer Password</label> <input type="text"
+								name="password" th:field="*{password}"
+								placeholder="Enter customer password" class="form-control">
+						</div>-->
+						
+						<div class="box-footer">
+						      <button type="submit" class= "btn btn-primary">UPDATE</button>
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

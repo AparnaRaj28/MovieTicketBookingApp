@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.cg.MovieTicketBookingApp.model.Customer;
 import com.cg.MovieTicketBookingApp.model.User;
 import com.cg.MovieTicketBookingApp.service.CustomerService;
+import com.cg.MovieTicketBookingApp.service.MovieService;
 import com.cg.MovieTicketBookingApp.service.UserService;
 
 @Controller
@@ -22,6 +23,8 @@ public class AdminController {
 	private CustomerService cust_service;
 
 	private UserService user_service;
+	
+	
 
 	public AdminController(CustomerService cust_service) {
 		super();
@@ -106,5 +109,7 @@ public class AdminController {
 		cust_service.deleteCustomerById(id);
 		return "redirect:/viewcustomers";
 	}
+	
+
 
 }
