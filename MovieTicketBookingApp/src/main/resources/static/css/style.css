@@ -1,14 +1,14 @@
 /* Style the header with a grey background and some padding */
 .header {
   overflow: hidden;
-  background-color: #f1f1f1;
+  background-color: black;
   padding: 20px 10px;
 }
 
 /* Style the header links */
 .header a {
   float: left;
-  color: black;
+  color: rgb(192, 192, 192);
   text-align: center;
   padding: 12px;
   text-decoration: none;
@@ -31,7 +31,7 @@
 
 /* Style the active/current link*/
 .header a.active {
-  background-color: dodgerblue;
+  background-color: rgb(128, 0, 128);
   color: white;
 }
 

@@ -6,11 +6,9 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 crossorigin="anonymous">
 <body align="center">
 
-<div class="alert alert-success" role="alert" align="center">
-  <h4 class="alert-heading">Registration Successful!!</h4>
-  <p> </p>
-  <hr>
-  <p class="mb-0">You can now login.<a th:href="@{/login}">Click here</a></p>
+<div class="alert alert-danger" role="alert" align="center">
+  Incorrect credentials<br><br>
+  <a th:href="@{/login}">Try again</a>
 </div>
 </body>
 </html>

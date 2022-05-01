@@ -16,6 +16,7 @@ import com.cg.MovieTicketBookingApp.model.User;
 import com.cg.MovieTicketBookingApp.repository.CustomerRepository;
 import com.cg.MovieTicketBookingApp.repository.UserRepository;
 import com.cg.MovieTicketBookingApp.service.CustomerService;
+import com.cg.MovieTicketBookingApp.service.UserService;
 
 @RestController
 public class ApplicationController {
@@ -28,6 +29,9 @@ public class ApplicationController {
 	
 	@Autowired
 	private CustomerRepository customer_repo;
+	
+	@Autowired
+	private UserService user_service;
 	
 //	@Autowired
 //	private CustomerService cust_service;
@@ -57,15 +61,35 @@ public class ApplicationController {
 	{
 		String username=user.getEmail();
 		String password=user.getPassword();
+		List<User> userlist= user_service.GetAllUser();
 		
 		if(username.equals("admin") && password.equals("admin"))
 		{
 			return new ModelAndView("admin/adminhome");
-			
+			// return "redirect:/adminhome";
 		}
-		model.addAttribute("Invalid credentials",true);
-		return new ModelAndView("login");
+			 
 		
+		  for(User u:userlist)
+		  {
+			  if(u.getEmail().equals(username) && u.getPassword().equals(password))
+			  {
+				 return new ModelAndView("Customer/userhome");
+				// return "redirect:/userhome";
+				  
+			  }
+			  //System.out.println(c.getCustomerId());
+		  }
+		//model.addAttribute("Invalid credentials",true);
+		return new ModelAndView("invalid");
+		 //return "redirect:/invalid";
+		
+	}
+	
+	@GetMapping("/invalid")
+	public ModelAndView InvalidLogin()
+	{
+		return new ModelAndView("invalid");
 	}
 	
 	@PostMapping("/process_register")
@@ -78,6 +102,12 @@ public class ApplicationController {
 		return new ModelAndView("success");
 	}
 	
+	@GetMapping("/logout")
+	public ModelAndView signout()
+	{
+		
+		return new ModelAndView("login");
+	}
 
 	
 //	   @GetMapping("/viewcustomer")

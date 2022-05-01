@@ -1,8 +1,11 @@
 package com.cg.MovieTicketBookingApp.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.cg.MovieTicketBookingApp.model.Customer;
 import com.cg.MovieTicketBookingApp.model.User;
 import com.cg.MovieTicketBookingApp.repository.UserRepository;
 
@@ -15,14 +18,20 @@ public class UserService {
 	//User signOut(User user);
 	
 	@Autowired
-	UserRepository repository;
+	UserRepository user_repo;;
+	
 	void addNewUser(User user)
 	{
-		repository.save(user);
+		user_repo.save(user);
 	}
 	void signIn(User user)
 	{
-		repository.save(user);
+		user_repo.save(user);
+	}
+	
+	public List<User> GetAllUser()
+	{
+		return user_repo.findAll(); 
 	}
 	
 //	public User signIn(String username,String password)

@@ -1,5 +1,7 @@
 package com.cg.MovieTicketBookingApp.service.Impl;
 
+import java.util.List;
+
 import com.cg.MovieTicketBookingApp.model.Customer;
 import com.cg.MovieTicketBookingApp.model.User;
 import com.cg.MovieTicketBookingApp.repository.UserRepository;
@@ -13,6 +15,8 @@ public class UserServiceImpl extends UserService{
 		super();
 		this.user_repo = user_repo;
 	}
+	
+
 //	@Override
 //	public User saveUser(User user) {
 //	     return user_repo.save(user);
