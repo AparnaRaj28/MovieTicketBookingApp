@@ -2,27 +2,36 @@ package com.cg.MovieTicketBookingApp.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.cg.MovieTicketBookingApp.model.Customer;
 import com.cg.MovieTicketBookingApp.model.User;
+import com.cg.MovieTicketBookingApp.repository.CustomerRepository;
 import com.cg.MovieTicketBookingApp.service.CustomerService;
 import com.cg.MovieTicketBookingApp.service.MovieService;
 import com.cg.MovieTicketBookingApp.service.UserService;
 
-@Controller
+@RestController
+@CrossOrigin(origins = "http://localhost:3000")
 public class AdminController {
 
 	private CustomerService cust_service;
 
 	private UserService user_service;
+	
+	@Autowired
+	private CustomerRepository cust_repo;
+	
 	
 	
 
@@ -45,17 +54,25 @@ public class AdminController {
 		 return new ModelAndView("admin/adminheader");
 	 }
 	 
-	@GetMapping("/viewcustomers")
-	public ModelAndView listCustomer(Model model) {
-//	  List<Customer> custlist= cust_service.ViewAllCustomer();
-//	  for(Customer c:custlist)
-//	  {
-//		  System.out.println(c.getCustomerId());
-//	  }
-		model.addAttribute("customers", cust_service.ViewAllCustomer());
-		return new ModelAndView("admin/ViewCustomers");
-
-	}
+//	@GetMapping("/viewcustomers")
+//	public String listCustomer(Model model) {
+////	  List<Customer> custlist= cust_service.ViewAllCustomer();
+////	  for(Customer c:custlist)
+////	  {
+////		  System.out.println(c.getCustomerId());
+////	  }
+//		model.addAttribute("customers", cust_service.ViewAllCustomer());
+//		//return new ModelAndView("admin/ViewCustomers");
+//		return "admin/ViewCustomers";
+//
+//	}
+	 
+	 // View all customers API
+		@GetMapping("/viewcustomers")
+		public List<Customer> listCustomer()
+		{
+			return cust_repo.findAll();	
+		}
 
 	@GetMapping("/viewcustomers/addcustomer")
 	public ModelAndView createCustomerForm(Model model) {

@@ -18,7 +18,7 @@ public class Theatre {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="theatre_id")
-	private String theatreId;
+	private int theatreId;
 	
 	@Column(name="theatre_name")
 	private String theatreName;
@@ -42,7 +42,7 @@ public class Theatre {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Theatre(String theatreId, String theatreName, String theatreCity, List<Movie> listOfMovies,
+	public Theatre(int theatreId, String theatreName, String theatreCity, List<Movie> listOfMovies,
 			List<Screen> listOfScreens, String managerName, String managerContact) {
 		super();
 		this.theatreId = theatreId;
@@ -53,10 +53,12 @@ public class Theatre {
 		this.managerName = managerName;
 		this.managerContact = managerContact;
 	}
-	public String getTheatreId() {
+
+
+	public int getTheatreId() {
 		return theatreId;
 	}
-	public void setTheatreId(String theatreId) {
+	public void setTheatreId(int theatreId) {
 		this.theatreId = theatreId;
 	}
 	public String getTheatreName() {

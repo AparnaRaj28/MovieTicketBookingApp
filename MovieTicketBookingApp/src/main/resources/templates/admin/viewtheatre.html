@@ -1,0 +1,107 @@
+<html xmlns:th="http://www.thymeLeaf.org">
+<head></head>
+<link rel="stylesheet" 
+href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
+integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+crossorigin="anonymous">
+
+</head>
+<body align="center">
+<!-- start admin navbar -->
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Movie Ticket Booking App- Admin</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+          <li class="nav-item">
+        <a class="nav-link" th:href="@{/viewcustomers}">Customers</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/viewmovie}">Movies</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" th:href="@{/viewtheatre}">Theatres</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/logout}">Logout</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<h1>Theatre Management
+</h1>
+<hr>
+
+<div class="container">
+     <div class="row">
+        <h2>Theatres</h2><br>
+        
+        <div class="row">
+            <div class= "col-lg-3">
+                 <br>
+                  <a th:href = "@{/viewtheatre/addtheatre}" class="btn btn-primary btn-sm mb-3">Add theatre</a>
+            </div>
+        </div>
+        
+     </div>
+
+     
+     <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+          <tr> 
+          
+            <th>Theatre ID </th>
+            <th>Theatre Name </th>
+            <th>Theatre City </th>
+            <th>Movies </th>
+            <th>Screens</th>
+            <th>Manager Name</th>
+            <th>Manager Contact</th>
+            <th >Actions</th>
+            <th></th>
+            
+            </tr>
+        </thead>
+        <tbody>
+             <tr th:each = "c:${theatres}">
+                 <td th:text= "${c.getTheatreId()}"></td>
+                 <td th:text= "${c.getTheatreName()}"></td>
+                 <td th:text= "${c.getTheatreCity()}"></td>
+                 <td>
+                 <for th:each="m:${movies}">                 
+                 <label th:text= "${m.getMovieName()}"></label>
+                 <label>,</label>
+                 </for>
+                 </td>
+                 <td th:text= "${c.getListOfScreens()}"></td>
+                 <td th:text= "${c.getManagerName()}"></td>
+                 <td th:text= "${c.getManagerContact()}"></td>
+                 <td>
+                  <a th:href= "@{/viewtheatre/edit/{id}(id=${c.getTheatreId()})}"
+                   class= "btn btn-primary">Update</a>
+                 </td>
+                 <td>
+                  <a th:href= "@{/viewtheatre/{id}(id=${c.getTheatreId()})}"
+                   class= "btn btn-danger">Delete</a>
+                  </td>
+    
+                 
+                  
+             </tr>
+        </tbody>
+     </table>
+</div>
+
+  
+</body>
+</html>

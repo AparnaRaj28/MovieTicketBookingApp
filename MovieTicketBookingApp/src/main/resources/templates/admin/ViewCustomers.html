@@ -28,6 +28,9 @@ crossorigin="anonymous">
        <li class="nav-item">
         <a class="nav-link" th:href="@{/viewmovie}">Movies</a>
       </li>
+              <li class="nav-item">
+        <a class="nav-link" th:href="@{/viewtheatre}">Theatres</a>
+      </li>
       <li class="nav-item">
         <a class="nav-link" th:href="@{/logout}">Logout</a>
       </li>
@@ -48,7 +51,7 @@ crossorigin="anonymous">
         <div class="row">
             <div class= "col-lg-3">
                  <br>
-                  <a th:href = "@{/viewcustomers/addcustomer}" class="btn btn-primary btn-sm mb-3">Add Customer</a>
+                 <!--   <a th:href = "@{/viewcustomers/addcustomer}" class="btn btn-primary btn-sm mb-3">Add Customer</a>-->
             </div>
         </div>
         
@@ -82,8 +85,8 @@ crossorigin="anonymous">
                    class= "btn btn-primary">Update</a>
                  </td>
                  <td>
-                  <a th:href= "@{/viewcustomers/{id}(id=${c.getCustomerId()})}"
-                   class= "btn btn-danger">Delete</a>
+                 <!--  <a th:href= "@{/viewcustomers/{id}(id=${c.getCustomerId()})}"
+                   class= "btn btn-danger">Delete</a>--> 
                   </td>
                   
                   
